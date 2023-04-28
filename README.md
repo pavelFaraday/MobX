@@ -41,7 +41,11 @@ Store state in any data structure you like: plain objects, arrays, classes, cycl
 
 ![state](slides/state.jpg)
 
--   Using `observable` is like turning a property of an object into a spreadsheet cell. But unlike spreadsheets, these values can not only be primitive values, but also references, objects and arrays.
+-   Using `observable` (or `makeObservable`) is like turning a property of an object into a spreadsheet cell. But unlike spreadsheets, these values can not only be primitive values, but also references, objects and arrays.
+
+-   `observer(component)` - component wrapped in `observer()` is listening into some state values from `observable` state & it should update whenever those values ("name", "age") are updated.
+
+![create observable component](slides/observer.jpg)
 
 -   Mark a method as an `action` that will modify the state. It is any piece of code that changes the state. User events, backend data pushes, scheduled events, etc. An action is like a user that enters a new value into a spreadsheet cell.
 
