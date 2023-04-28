@@ -7,6 +7,8 @@
 **Simple, scalable state management.**
 **Anything that can be derived from the application state, should be. Automatically.**
 
+![mobX Structure](slides/mobx_structure.jpg)
+
 MobX is a battle-tested library that makes state management simple and scalable by transparently applying functional reactive programming. The philosophy behind MobX is simple:
 
 😙 **Straightforward**
@@ -36,6 +38,8 @@ MobX is a battle-tested library that makes state management simple and scalable 
 ### State
 
 **State** is the data that drives your application. State is like spreadsheet cells that hold a value.
+
+## We can have multiple stores in MOBX !!!
 
 Store state in any data structure you like: plain objects, arrays, classes, cyclic data structures or references. It doesn't matter for the workings of MobX. **Just make sure that all properties you want to change over time are marked as `observable` so MobX can track them.**
 
@@ -79,6 +83,4 @@ Since state should in principle always be created from some event handlers, and 
 
 > The autorun function accepts one function that should run every time anything it observes changes. It also runs once when you create the autorun itself. It only responds to changes in observable state, things you have annotated observable or computed.
 
-![mobX Structure](slides/mobx_structure.jpg)
-
-## We can have multiple stores in MOBX !!!
+---
