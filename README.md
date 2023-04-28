@@ -25,6 +25,28 @@ MobX is a battle-tested library that makes state management simple and scalable 
 
 ---
 
+### Installation
+
+`yarn add mobx mobx-react`
+
+`npm install --save mobx mobx-react`
+
+---
+
+### State
+
+**State** is the data that drives your application. State is like spreadsheet cells that hold a value.
+
+Store state in any data structure you like: plain objects, arrays, classes, cyclic data structures or references. It doesn't matter for the workings of MobX. **Just make sure that all properties you want to change over time are marked as `observable` so MobX can track them.**
+
+![state](slides/state.jpg)
+
+Using `observable` is like turning a property of an object into a spreadsheet cell. But unlike spreadsheets, these values can not only be primitive values, but also references, objects and arrays.
+
+An `action` is any piece of code that changes the state. User events, backend data pushes, scheduled events, etc. An action is like a user that enters a new value into a spreadsheet cell.
+
+---
+
 ![mobX](slides/mobX_2.jpg)
 
 ### Configure({})
@@ -44,6 +66,8 @@ Possible options:
     The benefit of "observed" is that it allows you to create observables outside of actions and modify them freely, as long as they aren't used anywhere yet.
 
 Since state should in principle always be created from some event handlers, and event handlers should be wrapped, "always" captures this the best. But you probably don't want to use this mode in unit tests.
+
+---
 
 ### autorun(()=>{})
 
