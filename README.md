@@ -41,9 +41,11 @@ Store state in any data structure you like: plain objects, arrays, classes, cycl
 
 ![state](slides/state.jpg)
 
-Using `observable` is like turning a property of an object into a spreadsheet cell. But unlike spreadsheets, these values can not only be primitive values, but also references, objects and arrays.
+-   Using `observable` is like turning a property of an object into a spreadsheet cell. But unlike spreadsheets, these values can not only be primitive values, but also references, objects and arrays.
 
-An `action` is any piece of code that changes the state. User events, backend data pushes, scheduled events, etc. An action is like a user that enters a new value into a spreadsheet cell.
+-   Mark a method as an `action` that will modify the state. It is any piece of code that changes the state. User events, backend data pushes, scheduled events, etc. An action is like a user that enters a new value into a spreadsheet cell.
+
+-   'computed' - Can be used on a getter to declare it as a derived value that can be cached. Computed values can be used to derive information from other observables. They evaluate lazily, caching their output and only recomputing if one of the underlying observables has changed. If they are not observed by anything, they suspend entirely. Conceptually, they are very similar to formulas in spreadsheets, and can't be underestimated. They help in reducing the amount of state you have to store and are highly optimized. Use them wherever possible.
 
 ---
 
