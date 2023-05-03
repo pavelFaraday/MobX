@@ -1,4 +1,4 @@
-import { makeObservable, observable } from "mobx";
+import { makeObservable, observable, action } from "mobx";
 
 class Athlete {
 	name: string;
@@ -16,7 +16,17 @@ class Athlete {
 			name: observable,
 			age: observable,
 			teamHistory: true,
+			wishHappyBirthday: action,
+			tradePlayer: action,
 		});
+	}
+
+	wishHappyBirthday() {
+		this.age++;
+	}
+
+	tradePlayer(team: string) {
+		this.teamHistory.push(team);
 	}
 }
 
